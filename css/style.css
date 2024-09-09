@@ -1,13 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
+:root {
+  --color-primary: #42c3f9;
+  --color-secondary: #201e23;
+  --color-accent: rgb(243, 142, 40);
+  --color-bg: #000103;
+  --color-white: #ffffff;
+  --color-black: #111111;
+  --color-gray: #f5f5f5;
+  --color-button-hover: #42c3f9;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  scrollbar-width: thin;
-  scrollbar-color: #0088cc rgb(255, 0, 0);
+  scrollbar-color: var(--color-primary) rgb(0, 0, 0);
+  scroll-behavior: smooth;
 }
+/* *::selection {
+  background: var(--color-white);
+} */
 
 body {
   font-family: "Poppins", sans-serif;
@@ -16,17 +29,21 @@ body {
 img {
   max-width: 100%;
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 15px; /* Mejorar el ajuste del contenido */
 }
+
 .header {
   display: flex;
   align-items: center;
   min-height: 80vh;
-  background-color: #0088cc;
+  background-color: var(--color-bg);
   padding: 70px 0;
 }
+
 .menu {
   position: absolute;
   top: 0;
@@ -35,24 +52,29 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 15px 30px;
 }
+
 .logo {
   font-size: 25px;
-  color: #111111;
+  color: var(--color-primary);
   text-transform: uppercase;
   font-weight: 800;
 }
-.menu .navbar ul li {
-  position: relative;
-  float: left;
+.navbar ul {
+  display: flex; /* Cambiado para evitar float */
 }
-.menu .navbar ul li a {
+
+.navbar ul li a {
   font-size: 18px;
   padding: 20px;
-  color: #111111;
+  color: var(--color-primary);
   display: block;
-  font-weight: 450;
+  text-transform: uppercase;
+  font-weight: 650;
+  transition: color 0.3s ease;
 }
+
 .menu .navbar ul li a:hover {
   transition: 0.3s all;
   color: #ffffff;
@@ -81,7 +103,7 @@ img {
   backdrop-filter: blur(10px);
   top: 100%;
   z-index: 1;
-  background-color: #111111;
+  background-color: #898989;
   padding: 20px;
   min-height: 400px;
 }
@@ -93,7 +115,7 @@ td {
   color: #ffffff;
 }
 .borrar {
-  background-color: #111111;
+  background-color: #80cefc;
   border-radius: 50%;
   padding: 5px 10px;
   text-decoration: none;
@@ -113,6 +135,7 @@ td {
   text-align: center;
 }
 .header-txt {
+  color: #42c3f9;
   flex-basis: 50%;
   text-align: center;
 }
@@ -124,15 +147,16 @@ td {
   margin-bottom: 15px;
 }
 .header-txt p {
+  color: var(--color-white);
+  font-weight: 500;
   font-size: 20px;
-  text-transform: uppercase;
 }
 /* From Uiverse.io by alexruix */
 .input {
   text-align: center;
   max-width: 190px;
-  background-color: #f5f5f5;
-  color: #242424;
+  background-color: #ffffff;
+  color: #000000;
   padding: 0.15rem 0.5rem;
   min-height: 40px;
   border-radius: 4px;
@@ -142,7 +166,7 @@ td {
 }
 
 input:focus {
-  border-bottom: 2px solid #5b5fc7;
+  border-bottom: 2px solid #42c3f9;
   border-radius: 4px 4px 2px 2px;
 }
 
@@ -186,7 +210,7 @@ input:hover {
 }
 .ofert-txt h3 {
   color: #ffffff;
-  font-family: "Oswald";
+  font-family: "Poppins";
   font-size: 25px;
   text-transform: uppercase;
   margin-bottom: 15px;
@@ -198,9 +222,11 @@ input:hover {
   color: #ffffff;
   border-radius: 5px;
   font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .btn-2:hover {
-  background-color: #48c1fd;
+  background-color: #896000;
 }
 .products {
   padding: 50px 0;
@@ -229,7 +255,7 @@ input:hover {
 }
 .products h3 {
   color: #111111;
-  font-family: "Oswald";
+  font-family: "Poppins";
   font-size: 20px;
   text-transform: uppercase;
   margin-bottom: 15px;
@@ -242,6 +268,45 @@ input:hover {
 }
 .precio {
   font-weight: 800;
+}
+.slider {
+  filter: brightness(95%);
+  width: 75vw;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  padding-top: 40px;
+  margin-bottom: 5%;
+}
+
+.slider .slide-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  -webkit-animation: scroll 40s linear infinite;
+  width: calc(200px * 14);
+}
+
+.slider .slide {
+  width: 200px;
+}
+
+.slider .slide img {
+  filter: brightness(100%);
+  top: 0;
+  object-fit: cover;
+  width: 75%;
+  height: 90%;
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-200px * 7));
+    transform: translateX(calc(-200px * 7));
+  }
 }
 /* aca esta el footer hecho por mi//////////////////////////////////////////////////// */
 .footer {
@@ -340,11 +405,11 @@ input:hover {
 }
 
 .linkedin:hover svg {
-  fill: #0077b5;
+  fill: #003c5d;
 }
 
 .instagram {
-  background-color: #c13584;
+  background-color: #ff33a7;
 }
 
 .instagram svg {
