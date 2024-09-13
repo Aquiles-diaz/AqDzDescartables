@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
+:root {
+  --color-primary: #42c3f9;
+  --color-secondary: #201e23;
+  --color-accent: rgb(243, 142, 40);
+  --color-bg: #000103;
+  --color-white: #ffffff;
+  --color-black: #111111;
+  --color-gray: #f5f5f5;
+  --color-button-hover: #42c3f9;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scrollbar-color: var(--color-primary) rgb(0, 0, 0);
+  scroll-behavior: smooth;
+}
+/* *::selection {
+  background: var(--color-white);
+} */
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px; /* Mejorar el ajuste del contenido */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 5vh;
+  background-color: var(--color-bg);
+  padding: 70px 0;
+}
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+.logo {
+  font-size: 25px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.navbar ul {
+  display: flex; /* Cambiado para evitar float */
+}
+
+.navbar ul li a {
+  font-size: 18px;
+  padding: 20px;
+  color: var(--color-primary);
+  display: block;
+  text-transform: uppercase;
+  font-weight: 650;
+  transition: color 0.3s ease;
+}
+
+.menu .navbar ul li a:hover {
+  transition: 0.3s all;
+  color: #ffffff;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  padding: 0 200px;
+}
+.header-img {
+  flex-basis: 50%;
+  margin-right: 10%;
+  text-align: center;
+}
+.header-txt {
+  color: #42c3f9;
+  flex-basis: 50%;
+  text-align: center;
+}
+.header-txt h1 {
+  font-size: 90px;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Oswald";
+  margin-bottom: 15px;
+}
+.header-txt p {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 20px;
+}
+@media (max-width: 991px) {
+  .menu {
+    padding: 20px;
+  }
+  .menu label {
+    display: initial;
+  }
+  .menu .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #181818;
+    display: none;
+  }
+  .menu .navbar ul li {
+    width: 100%;
+  }
+  .menu .navbar ul li a {
+    color: #f5f5f5;
+  }
+  #menu:checked ~ .navbar {
+    display: initial;
+  }
+  .logo {
+    color: #000103;
+  }
+  .submenu:hover #carrito {
+    min-width: 100%;
+  }
+  .header {
+    background-color: #42c3f9;
+    min-height: 0vh;
+  }
+  .header-content {
+    padding: 50px 0;
+    flex-direction: column;
+  }
+  .header-img {
+    display: none;
+  }
+  .header-txt {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .header-txt h1 {
+    font-size: 70px;
+  }
+}
